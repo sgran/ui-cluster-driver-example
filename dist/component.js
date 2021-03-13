@@ -40,7 +40,9 @@ define("shared/components/cluster-driver/driver-example/component", ["exports", 
     },
     config: alias('cluster.exampleEngineConfig'),
     actions: {
-      save: function save() {},
+      save: function save() {
+        this.send('driverSave');
+      },
       cancel: function cancel() {
         get(this, 'router').transitionTo('global-admin.clusters.index');
       }
